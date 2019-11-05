@@ -8,13 +8,14 @@
 <form>
     Nhap thang:
     <input id="thang">
-    <button onclick = "tinhSoNgay()">Tinh So Ngay</button>
-    <p id"ketQua"></p>
+    <button onclick = "tinhSoNgay();return false;">Tinh So Ngay</button>
+    <p id="ketQua"></p>
 </form>
 <script>
     function tinhSoNgay() {
         let nhapThang = parseInt(document.getElementById("thang").value);
         let soNgay;
+        let ketQua = document.getElementById("ketQua");
         switch (nhapThang) {
             case 1:
             case 3:
@@ -23,15 +24,15 @@
             case 10:
             case 11:
             case 12:
-                alert(soNgay = "Thang co 31 ngay");
+                soNgay = "Thang co 31 ngay";
                 break;
             case 2:
-                alert(soNgay = "Thang co 28 hoac 29 ngay");
+                soNgay = "Thang co 28 hoac 29 ngay";
                 break;
             default:
-                alert(soNgay = "Thang co 30 ngay");
+                soNgay = "Thang co 30 ngay";
         }
-        soNgay.innerText= ketQua;
+        ketQua.innerText =soNgay;
     }
 </script>
 </body>
