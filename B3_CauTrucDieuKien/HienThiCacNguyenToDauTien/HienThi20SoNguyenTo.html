@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhap vao 1 so");
+    hienThiMSoNguyenTo(input);
+    function isSoNguyenTo(so) {
+        for (var i=2; i<so; i++) {
+            if (so%i==0) {
+                return false;
+            }
+            return true;
+        }
+    }
+    function hienThiMSoNguyenTo(m) {
+        let count =0;
+        let i=2;
+        let str= " ";
+        while (count<m) {
+            if(isSoNguyenTo(i)) {
+                str += i + " ";
+                document.write(i + " ");
+                count++;
+            } i++;
+        }
+    }
+</script>
+</body>
+</html>
