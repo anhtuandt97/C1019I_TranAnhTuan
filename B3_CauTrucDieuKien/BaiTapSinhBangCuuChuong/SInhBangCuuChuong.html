@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+//tao 1 table dung the table
+//dung 
+<script>
+    let bangCC;
+    bangCC = "<table border='1' width='1300' cellspacing='0' cellpadding='3'>";
+    for (i=2; i<=9; i++) {
+        bangCC = bangCC + "<tr>";
+        for (j = 1; j <=9; j++) {
+            bangCC = bangCC + "<td >" +i+"x"+j+"="+i*j+"</td>";
+        }
+        bangCC = bangCC + "</tr>";
+    }
+    bangCC = bangCC + "</table>";
+    document.write(bangCC);
+</script>
+</body>
+</html>
