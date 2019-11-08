@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Nhap Tu Can Tim Kiem: <br>
+    <input id="EnterTheWord">
+    <input type='button' value='Look Word' onclick='lookWord()'>
+</form>
+<script>
+    let arrVie = ["a", "b", "c", "d", "e", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y"];
+    let arrEng = ["a", "b", "c", "d", "e", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "f", "w", "z"];
+
+    function lookWord() {
+        let key = document.getElementById("EnterTheWord");
+        for (let i = 0; i < arrEng.length; i++) {
+            if (key.value === arrEng[i]) {
+                for (let j = 0; j < arrVie.length; j++) {
+                    if (arrVie[j] === key.value) {
+                        document.write(arrVie[j]);
+                        return true;
+                    } else {
+                        document.write("Khong tim thay!!");
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
