@@ -21,30 +21,30 @@
         }
     }
     data += "<br/><br/>"
-    b.innerHTML = "<hr/>" + data;
+    b.innerHTML = "<hr/>" + data
     function changeValueA() {
-        let positionA = prompt("A: ");
-        let positionB = prompt("B: ");
+        let positionA = prompt("X: ");
+        let positionB = prompt("Y: ");
         data = "";
-        board[positionA][positionB] = "X";
-        for (let positionA = 0; positionA < 5; positionA++) {
+        board[positionA][positionB] = "x";
+        for (let i = 0; i < 5; i++) {
             data += "<br/>";
-            for (let positionB = 0; positionB < 5; positionB++) {
-                data += board[positionA][positionB] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
             }
         }
         data += "<br/><br/>"
         b.innerHTML = "<hr/>" + data;
     }
     function changeValueB() {
-        let positionC = prompt("C: ");
-        let positionD = prompt("D: ");
+        let positionC = prompt("X: ");
+        let positionD = prompt("Y: ");
         data = "";
-        board[positionC][positionD] = "O";
-        for (let positionC = 0; positionC < 5; positionC++) {
+        board[positionC][positionD] = "o";
+        for (let i = 0; i < 5; i++) {
             data += "<br/>";
-            for (let positionD = 0; positionD < 5; j++) {
-                data += board[positionC][positionD] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
             }
         }
         data += "<br/><br/>"
