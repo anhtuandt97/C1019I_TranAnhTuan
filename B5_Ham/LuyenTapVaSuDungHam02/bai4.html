@@ -7,11 +7,11 @@
 <body>
 <script>
     let input = prompt("Nhap vao 1 so");
-    input = kiemTraSo(input);
-    function kiemTraSo(input)
-    {
-       
+
+    function kiemTraSo(e) {
+        return !isNaN(e);
     }
+    alert(kiemTraSo(input));
 </script>
 </body>
 </html>
