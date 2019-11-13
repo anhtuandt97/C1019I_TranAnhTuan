@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Nhap Tu Can Tim Kiem: <br>
+    <input id="EnterTheWord">
+    <input type='button' value='Look Word' onclick='lookWord()'>
+    <p id = "result"></p>
+</form>
+<script>
+    let key = prompt("Nhap vao ky tu");
+    let array = [a,b,c,d,e,f]
+    function lookWord() {
+        let key = document.getElementById("EnterTheWord");
+        let index = array.indexOf(key.value);
+        let result = document.getElementById("result");
+        if (index !== -1) {
+            result.innerText = arrVie[indexEng];
+        }
+        else if (indexVie === -1) {
+            result.innerText = arrEng[indexVie];
+        }
+    }
+
+</script>
+</body>
+</html>

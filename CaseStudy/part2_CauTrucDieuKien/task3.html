@@ -8,11 +8,11 @@
 <script>
     let nameCustomer = "Tran Anh Tuan";
     let idCard = "184303728";
-    let birthdayCustomer = "06/12/1997";
+    let birthdayCustomer = "12/06/1997";
     let emailCustomer = "anhtuandt97@gmail.com";
     let addressCustomer = "Đà Nẵng";
     let typeCustomer = "Diamond";
-    let discount = 10;
+    let discount = 650;
     let numberOfAccompanying = 2;
     let typeRoom = "Business";
     let rentDays = 10;
@@ -121,24 +121,29 @@
     }
 
     function showPayAmount() {
-        totalPays = getServicePrice() * parseInt(rentDays) * (1 - parseFloat(getDiscount()) / 100);
+         totalPays = parseFloat(getServicePrice()) * parseInt(rentDays) * (1 - parseFloat(getDiscount()) / 100);
         alert(totalPays);
     }
 
     function getServicePrice() {
-        if (typeService == "Villa") {
+        if (typeService === "Villa") {
             discount = 500;
         }
-        if (typeService == "House") {
+        else if (typeService === "House") {
             discount = 300;
         }
-        if (typeService == "Room") {
+        else if (typeService === "Room") {
             discount = 100;
         }
+        return discount;
     }
 
     function getDiscount() {
-        priceByAddress() + priceOverTime() + priceByTypeCustomer() + priceByAgeAndAdress();
+        priceByAddress();
+        priceOverTime();
+        priceByTypeCustomer();
+        priceByAgeAndAdress();
+        return discount;
     }
 
     function priceByAddress() {
@@ -187,12 +192,11 @@
 
     function priceByAgeAndAdress() {
         let ageCustomber = new Date().getFullYear() - new Date(birthdayCustomer).getFullYear();
-        if (ageCustomber > 30 && addressCustomer == "Đà Nẵng") {
+        if (ageCustomber > 30 && addressCustomer === "Đà Nẵng") {
             discount += 2;
-        } else if (20 <= ageCustomber && ageCustomber <= 30 && addressCustomer == "Đà Nẵng") {
+        } else if (20 <= ageCustomber && ageCustomber <= 30 && addressCustomer === "Đà Nẵng") {
             discount += 1;
         }
-
     }
 </script>
 </body>
