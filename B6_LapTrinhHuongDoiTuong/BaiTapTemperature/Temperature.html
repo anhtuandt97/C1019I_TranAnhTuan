@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputCelsius = parseFloat(prompt("Nhap C"));
+    let Temprature = function (inputCelsius) {
+        this.getFahrenheit = function () {
+            return (inputCelsius * 1.8) + 32;
+        };
+        this.getKenvin = function () {
+            return (inputCelsius + 273.15);
+        };
+    };
+
+    function displayTemprature() {
+        let temprature = new Temprature(inputCelsius);
+        let fahrenheit = temprature.getFahrenheit();
+        let kenvin = temprature.getKenvin();
+        alert(inputCelsius + "C" +" "+ "=" + "   " + fahrenheit + "F" + "    " + kenvin + "K");
+    }
+
+    displayTemprature();
+</script>
+</body>
+</html>
