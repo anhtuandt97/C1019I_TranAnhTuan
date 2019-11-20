@@ -8,9 +8,9 @@ function origin() {
 
 function set() {
     let date = new MyDate();
-    let day = date.setDay(10);
-    let month = date.setMonth(10);
-    let year = date.setYear(2019);
+    date.setDay(10);
+    date.setMonth(10);
+    date.setYear(2019);
     day = date.getDay();
     month = date.getMonth();
     year = date.getYear();
@@ -22,9 +22,9 @@ function update() {
     let inputDay = prompt("Enter the Day");
     let inputMonth = prompt("Enter the Month");
     let inputYear = prompt("Enter the Year");
-    let day = date.setDay(parseInt(inputDay));
-    let month = date.setMonth(parseInt(inputMonth));
-    let year = date.setYear(parseInt(inputYear));
+    date.setDay(parseInt(inputDay));
+    date.setMonth(parseInt(inputMonth));
+    date.setYear(parseInt(inputYear));
     day = date.getDay();
     month = date.getMonth();
     year = date.getYear();
