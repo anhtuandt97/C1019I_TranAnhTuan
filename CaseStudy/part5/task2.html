@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    let arrListCustomers = [];
+    let arrListCustomer = [];
 
     function displayMainMenu() {
         choose = prompt(
@@ -60,25 +60,25 @@
         customerInfo.push(typeRoom);
         customerInfo.push(rentDays);
         customerInfo.push(typeService);
-        arrListCustomers.push(customerInfo);
+        arrListCustomer.push(customerInfo);
         displayMainMenu();
     }
 
     function get2InforCustomer() {
         let result = "";
-        for (i = 0; i < arrListCustomers.length; i++) {
+        for (i = 0; i < arrListCustomer.length; i++) {
             result += "Số thứ tự:" + " " + i + "\n"
-                + "0.Name:" + " " + arrListCustomers[i][0] + "\n"
-                + "1.ID Card" + " " + arrListCustomers[i][1] + "\n"
+                + "0.Name:" + " " + arrListCustomer[i][0] + "\n"
+                + "1.ID Card" + " " + arrListCustomer[i][1] + "\n"
                 + "============================\n";
         }
         return result;
     }
 
     function displayInformationCustomer() {
-        choose = prompt("Chọn khách hàng muốn hiển thị \n" + get2InforCustomer() + arrListCustomers.length + ".Back");
+        choose = prompt("Chọn khách hàng muốn hiển thị \n" + get2InforCustomer() + arrListCustomer.length + ".Back");
         switch (choose) {
-            case (arrListCustomers.length) + "":
+            case (arrListCustomer.length) + "":
                 displayMainMenu();
                 break;
             default:
@@ -103,6 +103,63 @@
             + "9. Rent Days: " + " " + arrListCustomer[index][9] + "\n"
             + "10. Type Service: " + " " + arrListCustomer[index][10] + "\n"
             + "============== \n";
+    }
+
+    function editInformationCustomer() {
+        choose = prompt("Chọn khách hàng muốn edit \n" + get2InforCustomer() + arrListCustomer.length + ".Back");
+        switch (choose) {
+            case (arrListCustomer.length) + "":
+                displayMainMenu();
+                break;
+            default:
+                displayEditCustomer(choose);
+        }
+    }
+
+    function displayEditCustomer(index) {
+        choose = prompt("Chọn đối tượng cần chỉnh sửa: \n" + getInformationCustomer(index)
+            + arrListCustomer[index].length + ".Back");
+        processEditCustomer(index);
+    }
+
+    function processEditCustomer(index) {
+        switch (choose) {
+            case (arrListCustomer[index].length) + "":
+                displayMainMenu();
+                break;
+            default:
+                arrListCustomer[index][parseInt(choose)] = prompt("Nhập nội dung muốn thay đổi");
+                displayEditCustomer(index);
+        }
+    }
+
+    function deleteInformationCustomer() {
+        choose = prompt("Nhập Khách hàng cần xóa \n" + get2InforCustomer() + arrListCustomer.length + ".Back");
+        switch (choose) {
+            case (arrListCustomer.length) + "":
+                displayMainMenu();
+                break;
+            default:
+                confirmDeleteCustomer(choose);
+        }
+        displayMainMenu();
+    }
+    function confirmDeleteCustomer(index) {
+        choose = prompt(" Bạn có muốn xóa khách hàng có tên (" + arrListCustomer[index][0]  + ") này chứ : \n"
+            + "1. Có \n"
+            + "2. Không \n");
+        processDeleteCustomer(index);
+    }
+
+    function processDeleteCustomer(index) {
+        switch (choose) {
+            case "1":
+                arrListCustomer.slice(index, 1);
+                displayMainMenu();
+                break;
+            case "2":
+                displayMainMenu();
+        }
     }
 
 </script>
