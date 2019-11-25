@@ -8,6 +8,7 @@
     <script src="DisplayInformationCustomer.js"></script>
     <script src="editInformationCustomer.js"></script>
     <script src="deleteInformationCustomer.js"></script>
+    <script src="displayTotalPayOfCustomer.js"></script>
 </head>
 <body>
 <script>
@@ -15,9 +16,9 @@
         choose = prompt(
             "1. Add New Customer\n" +
             "2. Display Information Customer\n" +
-            "3. Edit Information Customer\n" +
-            "4. Delete Customer\n" +
-            "5. Exit\n");
+            "3. Display Total Of Customer\n" +
+            "4. Edit Information Customer\n" +
+            "5. Delete Customer\n");
         switch (choose) {
             case "1":
                 addNewCustomer();
@@ -26,9 +27,12 @@
                 displayInformationCustomer();
                 break;
             case "3":
-                editInformationCustomer();
+                displayTotalPayOfCustomer();
                 break;
             case "4":
+                editInformationCustomer();
+                break;
+            case "5":
                 deleteInformationCustomer();
                 break;
             default:
