@@ -8,6 +8,7 @@ function displayInformationCustomer (){
         default:
             displayCustomer(choose);
     }
+    displayMainMenu();
 }
 
 function get2InforCustomer() {

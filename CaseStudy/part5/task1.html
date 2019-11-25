@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    let arrListCustomers = [];
+    let arrListCustomer = [];
 
     function displayMainMenu() {
         choose = prompt(
@@ -23,7 +23,7 @@
                 displayInformationCustomer();
                 break;
             case "3":
-                editInformationCustomer();
+                editInformationEmployee();
                 break;
             case "4":
                 deleteInformationCustomer();
@@ -60,22 +60,22 @@
         customerInfo.push(typeRoom);
         customerInfo.push(rentDays);
         customerInfo.push(typeService);
-        arrListCustomers.push(customerInfo);
+        arrListCustomer.push(customerInfo);
         displayMainMenu();
     }
 
     function get2InforCustomer() {
         let result = "";
-        for (i = 0; i < arrListCustomers.length; i++) {
+        for (i = 0; i < arrListCustomer.length; i++) {
             result += "Số thứ tự:" + " " + i + "\n"
-                + "0.Name:" + " " + arrListCustomers[i][0] + "\n"
-                + "1.ID Card" + " " + arrListCustomers[i][1] + "\n"
+                + "0.Name:" + " " + arrListCustomer[i][0] + "\n"
+                + "1.ID Card" + " " + arrListCustomer[i][1] + "\n"
                 + "============================\n";
         }
         return result;
     }
 
-    function displayInformationCustomer() {
+    function displayInformationEmployee() {
         choose = prompt("Chọn khách hàng muốn hiển thị \n" + get2InforCustomer() + arrListCustomers.length + ".Back");
         switch (choose) {
             case (arrListCustomers.length) + "":
@@ -84,6 +84,7 @@
             default:
                 displayCustomer(choose);
         }
+        displayMainMenu();
     }
 
     function displayCustomer(index) {
