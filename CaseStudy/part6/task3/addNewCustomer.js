@@ -12,7 +12,7 @@ function addNewCustomer() {
     customer.setNumberOfAccompanying(checkNumberOfAccompanying());
     customer.setTypeRoom(prompt("Enter Type Room:"));
     customer.setRentDays(prompt("Enter Rent Days:"));
-    customer.setTypeService(prompt("Enter Type Service:"));
+    customer.setTypeService(checkTypeService());
 
     arrListCustomer.push(customer);
     displayMainMenu();
@@ -75,6 +75,18 @@ function checkNumberOfAccompanying(number) {
     } else {
         alert("Number Of Accompanying khong hop le, vui long nhap lai!!!");
         checkNumberOfAccompanying();
+    }
+}
+
+function checkTypeService(typeService) {
+    typeService = prompt("Enter Number Of Accompanying:");
+    regexp = /^[0-9]{2}$/;
+    if (regexp.test(typeService)) {
+        alert("Type Service hop le");
+        return typeService;
+    } else {
+        alert("Type Service khong hop le, vui long nhap lai!!!");
+        checkTypeService();
     }
 }
 
