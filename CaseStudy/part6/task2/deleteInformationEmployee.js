@@ -11,7 +11,7 @@ function deleteInformationEmployee() {
 }
 
 function confirmDeleteEmployee(index) {
-    choose = prompt(" Bạn có muốn xóa nhân viên có tên (" + arrListEmployee[index][0]  + ") này chứ : \n"
+    choose = prompt(" Bạn có muốn xóa nhân viên có tên " + arrListEmployee[index].getNameEmployee()  + " này chứ : \n"
         + "1. Có \n"
         + "2. Không \n");
     processDeleteEmployee(index);
@@ -20,7 +20,7 @@ function confirmDeleteEmployee(index) {
 function processDeleteEmployee(index) {
     switch (choose) {
         case "1":
-            arrListEmployee.slice(index, 1);
+            arrListEmployee.splice(index, 1);
             displayMainMenu();
             break;
         case "2":

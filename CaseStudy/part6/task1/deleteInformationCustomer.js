@@ -14,13 +14,10 @@ function confirmDeleteCustomer(index) {
     choose = prompt(" Bạn có muốn xóa khách hàng có tên " + arrListCustomer[index].getNameCustomer() + " này chứ : \n"
         + "1. Có \n"
         + "2. Không \n");
-    processDeleteCustomer(index);
-}
-
-function processDeleteCustomer(index) {
     switch (choose) {
         case "1":
-            arrListCustomer.slice(index, 1);
+            arrListCustomer.splice(index,1);
+            alert(get2InforCustomer());
             deleteInformationCustomer();
             break;
         case "2":

@@ -31,13 +31,10 @@ function getInformationEmployee(index) {
         + "1. ID Card: " + " " + arrListEmployee[index].getIdCard() + "\n"
         + "2. Birthday: " + " " + arrListEmployee[index].getBirthdayEmployee() + "\n"
         + "3. Email: " + " " + arrListEmployee[index].getEmailEmployee() + "\n"
-        + "4. Address: " + " " + arrListEmployee[index].getAddressEmployee() + "\n"
-        + "5. Type Customer: " + " " + arrListEmployee[index].getTypeEmployee() + "\n"
-        + "6. Discount: " + " " + arrListEmployee[index].getDiscount() + "\n"
-        + "7. Number Of Accompanying: " + " " + arrListEmployee[index].getNumberOfAccompanying() + "\n"
-        + "8. Type Room: " + " " + arrListEmployee[index].getTypeRoom() + "\n"
-        + "9. Rent Days: " + " " + arrListEmployee[index].getRentDays() + "\n"
-        + "10. Type Service: " + " " + arrListEmployee[index].getTypeService() + "\n"
-        + "11. TotalPays: " + " " + arrListEmployee[index].getTotalPays() + "\n"
+        + "4. PhoneNumber: " + " " + arrListEmployee[index].getPhoneNumber() + "\n"
+        + "5. Education Background: " + " " + arrListEmployee[index].getEducationBackground() + "\n"
+        + "6. Position: " + " " + arrListEmployee[index].getPosition() + "\n"
+        + "7. Salary: " + " " + arrListEmployee[index].getSalary() + "\n"
+        // + "11. TotalPays: " + " " + arrListEmployee[index].getTotalPays() + "\n"
         + "============== \n";
 }

@@ -11,8 +11,8 @@ let Customer = function () {
     this.setEmailCustomer = function (email) {
         this.email = email;
     };
-    this.setAddressCustomer = function (adress) {
-        this.adress = adress;
+    this.setAddressCustomer = function (address) {
+        this.adress = address;
     };
     this.setTypeCustomer = function (typeCustomer) {
         this.typeCustomer = typeCustomer;

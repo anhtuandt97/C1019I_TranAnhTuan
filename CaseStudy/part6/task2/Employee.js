@@ -11,27 +11,19 @@ let Employee = function () {
     this.setEmailEmployee = function (email) {
         this.email = email;
     };
-    this.setAddressEmployee = function (adress) {
-        this.adress = adress;
+    this.setPhoneNumber = function (phoneNumber) {
+        this.phoneNumber = phoneNumber;
     };
-    this.setTypeEmployee = function (typeCustomer) {
-        this.typeCustomer = typeCustomer;
+    this.setEducationBackground = function (educationBackground) {
+        this.educationBackground = educationBackground;
     };
-    this.setDiscount = function (discount) {
-        this.discount = discount;
+    this.setPosition = function (position) {
+        this.position = position;
     };
-    this.setNumberOfAccompanying = function (numberOfAccompanying) {
-        this.numberOfAccompanying = numberOfAccompanying;
+    this.setSalary = function (salary) {
+        this.salary = salary;
     };
-    this.setTypeRoom = function (typeRoom) {
-        this.typeRoom = typeRoom;
-    };
-    this.setRentDays = function (rentDays) {
-        this.rentDays = rentDays;
-    };
-    this.setTypeService = function (typeService) {
-        this.typeService = typeService;
-    };
+
 
     this.getNameEmployee= function () {
         return this.name;
@@ -45,28 +37,30 @@ let Employee = function () {
     this.getEmailEmployee = function () {
         return this.email;
     };
-    this.getAddressEmployee = function () {
-        return this.adress
+    this.getPhoneNumber = function () {
+        return this.phoneNumber;
     };
-    this.getTypeEmployee = function () {
-        return this.typeCustomer;
+    this.getEducationBackground = function () {
+        return this.educationBackground;
     };
-    this.getDiscount = function () {
-        return this.discount;
+    this.getPosition = function () {
+        return this.position;
     };
-    this.getNumberOfAccompanying = function () {
-        return this.numberOfAccompanying;
+    this.getSalary = function () {
+        if (this.setPosition("Manager")) {
+            return this.salary = this.salary + 500;
+        }
+        else if (this.setPosition("Sale")) {
+            return this.salary = this.salary + 300;
+        }
+        else if (this.setPosition("Marketing")) {
+            return this.salary = this.salary + 200;
+        }
+        else
+            return this.salary;
     };
-    this.getTypeRoom = function () {
-        return this.typeRoom;
-    };
-    this.getRentDays = function () {
-        return this.rentDays;
-    };
-    this.getTypeService = function () {
-        return this.typeService;
-    };
-    this.getTotalPays = function () {
-        return totalPays = 500 * Number.parseInt(this.rentDays) * (1 - Number.parseFloat(this.discount) / 100);
-    };
+
+    // this.getRoomCharge = function () {
+    //     return totalPays = 500 * Number.parseInt(this.rentDays) * (1 - Number.parseFloat(this.discount) / 100);
+    // };
 };
