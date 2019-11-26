@@ -11,8 +11,8 @@ function addNewCustomer() {
     customer.setDiscount(checkDiscount());
     customer.setNumberOfAccompanying(checkNumberOfAccompanying());
     customer.setTypeRoom(prompt("Enter Type Room:"));
-    customer.setRentDays(prompt("Enter Rent Days:"));
-    customer.setTypeService(checkTypeService());
+    customer.setRentDays(checkRentDays());
+    customer.setTypeService(prompt("Enter Type Service:"));
 
     arrListCustomer.push(customer);
     displayMainMenu();
@@ -56,7 +56,7 @@ function checkEmail(email) {
 
 function checkDiscount(discount) {
     discount = prompt("Enter Discount:");
-    regexp = /^[0-9]{3}$/;
+    regexp = /^[0-9]{1,3}$/;
     if (regexp.test(discount)) {
         alert("Discount hop le");
         return discount;
@@ -68,7 +68,7 @@ function checkDiscount(discount) {
 
 function checkNumberOfAccompanying(number) {
     number = prompt("Enter Number Of Accompanying:");
-    regexp = /^[0-9]{2}$/;
+    regexp = /^[0-9]{1,2}$/;
     if (regexp.test(number)) {
         alert("Discount hop le");
         return number;
@@ -78,15 +78,15 @@ function checkNumberOfAccompanying(number) {
     }
 }
 
-function checkTypeService(typeService) {
-    typeService = prompt("Enter Number Of Accompanying:");
-    regexp = /^[0-9]{2}$/;
-    if (regexp.test(typeService)) {
+function checkRentDays(rentDays) {
+    rentDays = prompt("Enter Number Of Accompanying:");
+    regexp = /^[0-9]{1,2}$/;
+    if (regexp.test(rentDays)) {
         alert("Type Service hop le");
-        return typeService;
+        return rentDays;
     } else {
         alert("Type Service khong hop le, vui long nhap lai!!!");
-        checkTypeService();
+        checkRentDays();
     }
 }
 
