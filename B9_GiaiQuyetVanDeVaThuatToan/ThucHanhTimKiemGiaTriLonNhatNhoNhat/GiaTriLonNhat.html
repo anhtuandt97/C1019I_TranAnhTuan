@@ -6,35 +6,37 @@
 </head>
 <body>
 <script>
-    function findMin(arr) {
-        var min = arr[0];
+    function findMax(arr) {
+        var max = arr[0];
         for (var i = 1; i < arr.length; ++i) {
-            if (arr[i] < min) {
-                min = arr[i];
+            if (arr[i] > max) {
+                max = arr[i];
             }
         }
-        return min;
+        return max;
     }
+
     function dispArr(arr) {
-        putstr("Enter a number to search for: ");
+        document.write("Enter a number to search for: ");
         for (var i = 0; i < arr.length; ++i) {
-            putstr(arr[i] + " ");
+            document.write(arr[i] + " ");
             if(i%10==9){
-                putstr("\n");
+                document.write("\n");
             }
         }
         if(i%10!=0){
-            putstr("\n");
+            document.write("\n");
         }
     }
+
     var nums = [];
-    for(var i=0;i<100;++i){
+    for(var i=0; i<100; ++i){
         nums[i] = Math.floor(Math.random() * 101);
     }
-    var minValue = findMin(nums);
-        dispArr(nums);
+    var maxValue = findMax(nums);
+    dispArr(nums);
     document.write("<br/>");
-    document.write("The minimum value is: " + minValue);
+    document.write("The maximum value is: " + maxValue);
 </script>
 </body>
 </html>
